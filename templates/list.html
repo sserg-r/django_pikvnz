@@ -1,0 +1,38 @@
+
+
+<style>
+    .group { cursor: pointer; }
+</style>
+
+<ul>
+{% for obj in hpv.base %}
+    <li class="group" id= "{{obj.name}}" data-subname-url="{% url 'ajax_load_subnames' %}">{{obj.name}}</li>
+    <ul style="display: none"></ul>
+
+{% endfor %}
+</ul>
+
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+
+
+
+<script>
+    $( ".group" ).click(function (event) {
+    //$("li").click(function (event) {
+        var element = $(event.target);
+        const url = element.attr("data-subname-url");  // get the url of the `load_subname` view
+        const nameId = element.attr("id");
+        var node=element.next();        
+        node.is(":hidden")?node.show():node.hide();    // hide/show sublist
+        
+        $.ajax({  
+            url: url,                    // set the url of the request
+            data: {'name': nameId},      // add name id to the GET parameters
+         }).done(function(data) {              
+        node.html(data);
+        });
+    });
+</script>

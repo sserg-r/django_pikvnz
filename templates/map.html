@@ -1,0 +1,82 @@
+{% load leaflet_tags %}
+
+<head>
+    {% leaflet_js %}
+    {% leaflet_css %}
+    
+   <style>
+      .leaflet-container { height: 100%; }
+    </style>
+   
+</head>
+
+<script type="text/javascript">
+    var myStyle = function(feature) {
+        switch (feature.properties.classmane) {
+            case 1: return {color: "#ff0000"};
+            case 2:   return {color: "#0000ff"};
+            case 3:   return {color: "#00ffff"};
+            case 4:   return {color: "#ff00ff"};
+        }};
+        var filt=function(feature, layer) {
+            return feature.properties.name=='aa';
+        }
+        var filt1=function(feature, layer) {
+            return feature.properties.name=='bb';
+        }
+    
+    var collection = {{ hpv.polyg | safe }};;
+    var initcoll=L.geoJSON(collection, {style: myStyle});
+    
+    var map;
+    window.addEventListener(
+        "map:init", 
+        function(e){
+            map=e.detail.map;
+            L.marker([26.92, -81.5]).addTo(map);       
+            initcoll.addTo(map);
+            map.setView([53.5,27.5], 8);
+        }, false);
+
+    var showed='all';  
+    
+    $("li").click(function (event) {
+        var element = $(event.target);
+        var nameId = element.attr("id");
+        
+        //console.log(nameId);
+        var ft=function(feature, layer) {
+            return feature.properties.name==nameId;
+        }
+        
+        //console.log(data);
+        //console.log(data.showed); 
+        if (showed==nameId){            
+        }
+        else{
+            initcoll.remove();
+            initcoll=L.geoJSON(collection, {style: myStyle, filter: ft});
+            initcoll.addTo(map);
+            
+            showed=nameId;
+        }
+        map.fitBounds(initcoll.getBounds());
+    });       
+       
+    
+    /*
+    function map_init(map, options) {
+        initcoll.addTo(map);        
+        var coord=[53.885,27.604];        
+        map.setView(coord, 6);
+        L.marker(coord).addTo(map)
+    }
+*/
+
+</script>
+
+
+
+<body>
+    {% leaflet_map "yourmap" %}
+</body>
