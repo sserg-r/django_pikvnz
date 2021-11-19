@@ -10,6 +10,7 @@
    
 </head>
 
+<script src="https://unpkg.com/leaflet.vectorgrid@latest/dist/Leaflet.VectorGrid.bundled.js"></script>
 <script type="text/javascript">
     var myStyle = function(feature) {
         switch (feature.properties.classmane) {
@@ -35,7 +36,9 @@
             map=e.detail.map;
             L.marker([26.92, -81.5]).addTo(map);       
             initcoll.addTo(map);
-            map.setView([53.5,27.5], 8);
+            L.vectorGrid.protobuf("http://localhost/{z}/{x}/{y}.pbf").addTo(map);
+            map.fitBounds(initcoll.getBounds());
+            //map.setView([53.5,27.5], 8);
         }, false);
 
     var showed='all';  

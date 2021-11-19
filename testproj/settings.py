@@ -14,7 +14,7 @@ from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
+#GDAL_LIBRARY_PATH = 'C:\\Program Files\\QGIS 3.22.0\\bin\\gdal303'
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
@@ -133,3 +133,10 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+#GDAL_LIBRARY_PATH = r'C:\Users\sserg\AppData\Local\Programs\Python\Python310\Lib\site-packages\osgeo\gdal303'
+
+
+GDAL_LIBRARY_PATH = r'c:\Users\sserg\.virtualenvs\django_pikvnz-l93phKMJ\Lib\site-packages\osgeo\gdal303'
+GEOS_LIBRARY_PATH = r'c:\Users\sserg\.virtualenvs\django_pikvnz-l93phKMJ\Lib\site-packages\osgeo\geos_c'
+# SPATIALITE_LIBRARY_PATH = r'c:\Users\sserg\.virtualenvs\django_pikvnz-l93phKMJ\Lib\site-packages\mod_spatialite-5.0.1\mod_spatialite'

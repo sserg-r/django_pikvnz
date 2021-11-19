@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "8ccfbbe68f708349ac0b90b3b20a7d9960a6cdc99b9f6401c225e5c7d23c1026"
+            "sha256": "c125182410f16767bd0b2bf8452614bbf4894775c13839238313a0ab7f1c4af0"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -21,7 +21,7 @@
                 "sha256:4ef1ab46b484e3c706329cedeff284a5d40824200638503f5768edb6de7d58e9",
                 "sha256:ffc141aa908e6f175673e7b1b3b7af4fdb0ecb738fc5c8b88f69f055c2415214"
             ],
-            "markers": "python_version >= '3.6'",
+            "markers": "python_full_version >= '3.6.0'",
             "version": "==3.4.1"
         },
         "django": {
@@ -47,6 +47,13 @@
             ],
             "index": "pypi",
             "version": "==0.28.2"
+        },
+        "gdal": {
+            "hashes": [
+                "sha256:6b54e786a2e5e1b9aa249b89cb746ee1846b030f92e35967a72d395ea53dcfde"
+            ],
+            "path": "./static/GDAL-3.3.3-cp39-cp39-win_amd64.whl",
+            "version": "==3.3.3"
         },
         "pytz": {
             "hashes": [
