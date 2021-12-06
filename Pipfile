@@ -5,9 +5,9 @@ name = "pypi"
 
 [packages]
 django = "*"
-django-leaflet = "*"
-django-geojson = "*"
-gdal = {path = "./static/GDAL-3.3.3-cp39-cp39-win_amd64.whl"}
+psycopg2 = "*"
+dj-database-url = "*"
+gunicorn = "*"
 
 [dev-packages]
 

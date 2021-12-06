@@ -4,13 +4,29 @@
     .group { cursor: pointer; }
 </style>
 
-<ul>
+{% comment %} <ul>
 {% for obj in hpv.base %}
     <li class="group" id= "{{obj.name}}" data-subname-url="{% url 'ajax_load_subnames' %}">{{obj.name}}</li>
     <ul style="display: none"></ul>
 
 {% endfor %}
+</ul> {% endcomment %}
+
+
+<ul>
+<ul>
+{% for obj in hpv.all %}
+    
+    {% if obj.level == 0 %}
+        </ul><li class="group" id= "{{obj.id}}" geom="{{obj.geom}}" classes="{{obj.classes}}" name="{{obj.name}}">{{obj.name}}</li><ul style="display: none">        
+    {% else %}
+        <li class="item" id= "{{obj.id}}" geom="{{obj.geom}}" classes="{{obj.classes}}" name="{{obj.name}}">{{obj.name}}</li>
+    {% endif %}
+
+{% endfor %}
 </ul>
+
+
 
 
 
@@ -20,6 +36,15 @@
 
 
 <script>
+    $( ".group" ).click(function (event){
+        var element = $(event.target);       
+        const nameId = element.attr("id");
+        var node=element.next();        
+        node.is(":hidden")?node.show():node.hide();    // hide/show sublist
+
+    })
+
+    /*
     $( ".group" ).click(function (event) {
     //$("li").click(function (event) {
         var element = $(event.target);
@@ -35,4 +60,5 @@
         node.html(data);
         });
     });
+    */
 </script>

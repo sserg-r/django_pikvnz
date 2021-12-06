@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "c125182410f16767bd0b2bf8452614bbf4894775c13839238313a0ab7f1c4af0"
+            "sha256": "75d166fd1ff3deb72b52bfa741bef6283329687f28f5566419d42fa65acee708"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -21,8 +21,16 @@
                 "sha256:4ef1ab46b484e3c706329cedeff284a5d40824200638503f5768edb6de7d58e9",
                 "sha256:ffc141aa908e6f175673e7b1b3b7af4fdb0ecb738fc5c8b88f69f055c2415214"
             ],
-            "markers": "python_full_version >= '3.6.0'",
+            "markers": "python_version >= '3.6'",
             "version": "==3.4.1"
+        },
+        "dj-database-url": {
+            "hashes": [
+                "sha256:4aeaeb1f573c74835b0686a2b46b85990571159ffc21aa57ecd4d1e1cb334163",
+                "sha256:851785365761ebe4994a921b433062309eb882fedd318e1b0fcecc607ed02da9"
+            ],
+            "index": "pypi",
+            "version": "==0.5.0"
         },
         "django": {
             "hashes": [
@@ -32,28 +40,30 @@
             "index": "pypi",
             "version": "==3.2.9"
         },
-        "django-geojson": {
+        "gunicorn": {
             "hashes": [
-                "sha256:374a89500b222c1f561d4bc218c99a80877aac8b8cd9f0b48439549abd784980",
-                "sha256:c895500ca6045560135dd0a67acb91d51a7692727362b31106abc01918f5f34d"
+                "sha256:9dcc4547dbb1cb284accfb15ab5667a0e5d1881cc443e0677b4882a4067a807e",
+                "sha256:e0a968b5ba15f8a328fdfd7ab1fcb5af4470c28aaf7e55df02a99bc13138e6e8"
             ],
             "index": "pypi",
-            "version": "==3.2.0"
+            "version": "==20.1.0"
         },
-        "django-leaflet": {
+        "psycopg2": {
             "hashes": [
-                "sha256:14b6b11cf81f40113f832cc77686a9b0c67b35d12d1f10d973f083997e6be8de",
-                "sha256:4f9e3147f438f4329b0f3bfd10d379ceaffe9267adf5cca05cb1a7c9e24e585b"
+                "sha256:26322c3f114de1f60c1b0febf8fdd595c221b4f624524178f515d07350a71bd1",
+                "sha256:6796ac614412ce374587147150e56d03b7845c9e031b88aacdcadc880e81bb38",
+                "sha256:77b9105ef37bc005b8ffbcb1ed6d8685bb0e8ce84773738aa56421a007ec5a7a",
+                "sha256:77d09a79f9739b97099d2952bbbf18eaa4eaf825362387acbb9552ec1b3fa228",
+                "sha256:91c7fd0fe9e6c118e8ff5b665bc3445781d3615fa78e131d0b4f8c85e8ca9ec8",
+                "sha256:a761b60da0ecaf6a9866985bcde26327883ac3cdb90535ab68b8d784f02b05ef",
+                "sha256:a84da9fa891848e0270e8e04dcca073bc9046441eeb47069f5c0e36783debbea",
+                "sha256:b8816c6410fa08d2a022e4e38d128bae97c1855e176a00493d6ec62ccd606d57",
+                "sha256:dfc32db6ce9ecc35a131320888b547199f79822b028934bb5b332f4169393e15",
+                "sha256:f65cba7924363e0d2f416041b48ff69d559548f2cb168ff972c54e09e1e64db8",
+                "sha256:fd7ddab7d6afee4e21c03c648c8b667b197104713e57ec404d5b74097af21e31"
             ],
             "index": "pypi",
-            "version": "==0.28.2"
-        },
-        "gdal": {
-            "hashes": [
-                "sha256:6b54e786a2e5e1b9aa249b89cb746ee1846b030f92e35967a72d395ea53dcfde"
-            ],
-            "path": "./static/GDAL-3.3.3-cp39-cp39-win_amd64.whl",
-            "version": "==3.3.3"
+            "version": "==2.9.2"
         },
         "pytz": {
             "hashes": [
@@ -61,6 +71,14 @@
                 "sha256:acad2d8b20a1af07d4e4c9d2e9285c5ed9104354062f275f3fcd88dcef4f1326"
             ],
             "version": "==2021.3"
+        },
+        "setuptools": {
+            "hashes": [
+                "sha256:6d10741ff20b89cd8c6a536ee9dc90d3002dec0226c78fb98605bfb9ef8a7adf",
+                "sha256:d144f85102f999444d06f9c0e8c737fd0194f10f2f7e5fdb77573f6e2fa4fad0"
+            ],
+            "markers": "python_version >= '3.6'",
+            "version": "==59.5.0"
         },
         "sqlparse": {
             "hashes": [
