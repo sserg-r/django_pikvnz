@@ -25,8 +25,15 @@ SECRET_KEY = 'django-insecure-t%)b2es0b3r$efpl=c#73th5yjp*fks5a$vise$rk5h*%0-s!@
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '*'
+    # '192.168.2.101',
+    # '192.168.250.208',
+    # '127.0.0.1'
+]
 
+# SECURE_REFERRER_POLICY = "no-referrer"
+# CORS_ALLOWED_ORIGINS = [r'file:///C:/Users/sserg/Documents/test.html']
 
 # Application definition
 
@@ -37,9 +44,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django.contrib.gis',
-    'djgeojson',
-    'leaflet',
+    # 'django.contrib.gis',
+    # 'djgeojson',
+    # 'leaflet',
     'testapp',
 ]
 
@@ -79,13 +86,23 @@ WSGI_APPLICATION = 'testproj.wsgi.application'
 
 DATABASES = {
     'default': {
-        # 'ENGINE': 'django.db.backends.sqlite3',
-        'ENGINE': 'django.contrib.gis.db.backends.spatialite',
-        'NAME': BASE_DIR / 'db.sqlite',
-        # 'NAME': BASE_DIR / 'db.sqlite3',
+        # 'ENGINE': 'django.contrib.gis.db.backends.postgis',
+        # 'ENGINE': 'django.db.backends.postgresql',
+        # 'NAME': 'gis1',
+        # 'USER': 'postgres',
+        # 'PASSWORD': '1',
+        # 'HOST': 'localhost',
+        # 'PORT': '5432',
     }
 }
+import dj_database_url
+db_from_env = dj_database_url.config(conn_max_age=600)
+DATABASES['default'].update(db_from_env)
 
+
+# GDAL_LIBRARY_PATH = r'c:\Users\sserg\.virtualenvs\django_pikvnz-l93phKMJ\Lib\site-packages\osgeo\gdal303'
+# GEOS_LIBRARY_PATH = r'c:\Users\sserg\.virtualenvs\django_pikvnz-l93phKMJ\Lib\site-packages\osgeo\geos_c'
+# GDAL_DATA = r'c:\Users\sserg\.virtualenvs\django_pikvnz-l93phKMJ\Lib\site-packages\osgeo\data\gdal'
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -133,10 +150,3 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-#GDAL_LIBRARY_PATH = r'C:\Users\sserg\AppData\Local\Programs\Python\Python310\Lib\site-packages\osgeo\gdal303'
-
-
-GDAL_LIBRARY_PATH = r'c:\Users\sserg\.virtualenvs\django_pikvnz-l93phKMJ\Lib\site-packages\osgeo\gdal303'
-GEOS_LIBRARY_PATH = r'c:\Users\sserg\.virtualenvs\django_pikvnz-l93phKMJ\Lib\site-packages\osgeo\geos_c'
-# SPATIALITE_LIBRARY_PATH = r'c:\Users\sserg\.virtualenvs\django_pikvnz-l93phKMJ\Lib\site-packages\mod_spatialite-5.0.1\mod_spatialite'
