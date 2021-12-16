@@ -85,28 +85,28 @@ def get_tile1(request, **kwargs):
     # print(querystr)
     return HttpResponse(bytes(queryset.mvt), content_type="application/vnd.mapbox-vector-tile")  
 
-import psycopg2
-from testproj.settings import DATABASES
+# import psycopg2
+# from testproj.settings import DATABASES
 
-class DBConnector(object):
-    def __new__(cls):
-        if not hasattr(cls, 'instance'):
-            cls.instance = super(DBConnector, cls).__new__(cls)
-        return cls.instance
+# class DBConnector(object):
+#     def __new__(cls):
+#         if not hasattr(cls, 'instance'):
+#             cls.instance = super(DBConnector, cls).__new__(cls)
+#         return cls.instance
 
-    def __init__(self):
-        settings=DATABASES['default']
+#     def __init__(self):
+#         settings=DATABASES['default']
         # dbname=settings['NAME']
         # user=settings['USER']
         # passw=settings['PASSWORD']
         # host=settings['HOST']
         # port=settings['PORT']
-        dbname='gis'
-        user='gis'
-        passw='ss571322rr'
-        host='database-1.c7iiuhyzvsod.eu-west-1.rds.amazonaws.com'
-        port='5432'
-        self.instance = psycopg2.connect(f"dbname={dbname} user={user} password={passw} host={host} port={port}")
+        # dbname='gis'
+        # user='gis'
+        # passw='ss571322rr'
+        # host='database-1.c7iiuhyzvsod.eu-west-1.rds.amazonaws.com'
+        # port='5432'
+        # self.instance = psycopg2.connect(f"dbname={dbname} user={user} password={passw} host={host} port={port}")
             
 # def get_tile(request, **kwargs):
 
@@ -140,8 +140,8 @@ def get_tile(request, **kwargs):
     querystr=f"select  mvt from cashed where z={z} and x={x} and y={y}"
     
     # querystr= get_mvt(tab, fields, kwargs)
-    con = DBConnector()
-    records=None
+    # con = DBConnector()
+    # records=None
     response=HttpResponse('')
    
     with connection.cursor() as cursor:

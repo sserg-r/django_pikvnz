@@ -2,6 +2,15 @@
 
 <style>
     .group { cursor: pointer; }
+
+    li:hover {
+        cursor: pointer;
+        font-weight: bold;
+        /*transform: scale(1.1);*/
+        transition: all 0.3s ease-out;
+        box-shadow: inset 0 0 0 2px #f0f0ff;
+        background: #efeff5;
+    }
 </style>
 
 {% comment %} <ul>
@@ -24,11 +33,7 @@
     {% endif %}
 
 {% endfor %}
-</ul>
-
-
-
-
+</ul> 
 
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 
