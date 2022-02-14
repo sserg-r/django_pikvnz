@@ -181,8 +181,8 @@
     var classnames={"0":"Пахотные земли под агроценозами",
                     "1":"Бурьянистые залежи",
                     "2":"Корневищные и рыхлокустовые залежи",
-                    "3":"Рудеральные сообщества, рудерализованные и закустаренные луга",
-                    "4":"Древесно-кустарниковая растительность"};
+                    "3":"Рудерализованные и закустаренные луга",
+                    "4":"Земли под древесно-кустарниковой растительностью"};
 
     
 
@@ -252,9 +252,16 @@
         rows=rows.map(function(k){return [k[1], k[2]]})
         //var name=props["id"];
         var data = new google.visualization.DataTable();
+
+        var formatter = new google.visualization.NumberFormat(
+            {suffix: ' га', groupingSymbol: ' ', fractionDigits: 1});
+        
+
+
         data.addColumn('string', 'Type');
         data.addColumn('number', 'area, Ha');
         data.addRows(rows);
+        formatter.format(data, 1); // Apply formatter to second column
         var options = {'title':`РАСПРЕДЕЛЕНИЕ ЗЕМЕЛЬ \n ${name}`,
                         'legend':{'position':'top', 'maxLines':3}, 
                         chartArea: {bottom: '5%', width:'75%', height:'65%'},        
